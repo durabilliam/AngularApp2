@@ -1,1 +1,24 @@
-<p>home works!</p>
+<!-- <p>home works!</p>
+<div>{{products | json}}</div>
+<mat-card *ngFor="let product of products" style="margin-top: 10px;">
+  <mat-card-title>{{product.name}}</mat-card-title>
+</mat-card> -->
+<div style="padding: 13px;">
+  <mat-spinner *ngIf="products.length === 0"></mat-spinner>
+  <mat-card *ngFor="let product of products" style="margin-top: 10px;">
+    <mat-card-header>
+      <mat-card-title>{{product.name}}</mat-card-title>
+      <mat-card-subtitle>{{product.price}} $/ {{product.quantity}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{product.descriprtion}}
+        {{product.imageUrl}}
+      </p>
+      <img style="height: 100%; width: 100%" src="{{ product.imageUrl }}"/>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Buy Product</button>
+    </mat-card-actions>
+  </mat-card>
+</div>
